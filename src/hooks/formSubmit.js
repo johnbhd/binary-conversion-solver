@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 
 export default function formSubmit() {
     const [form, setForm] = useState({ 
-        input: ""
+        number: "",
+        base: ""
     })
 
-    const [submit, setSubmit] = useState("")
+    const [submit, setSubmit] = useState({
+         number: ""
+    })
 
     const handleChange = (e) => { 
         setForm({
@@ -16,8 +19,7 @@ export default function formSubmit() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(form.input)
-        setSubmit(form.input)
+        setSubmit(form.number)
     }
 
 
