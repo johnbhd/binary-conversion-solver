@@ -1,7 +1,8 @@
 import React from 'react'
 
 function ShowAnswer({ submit }) {
-  let num = Number(submit)
+  console.log(submit)
+  let num = Number(submit.number)
   let base = 2
   
   
@@ -13,6 +14,7 @@ function ShowAnswer({ submit }) {
       binary = (localNum % base) + binary
       localNum = Math.floor(localNum / base)
     }
+    //binary = localNum.toString(2)
 
     return binary 
   }
@@ -39,7 +41,7 @@ function ShowAnswer({ submit }) {
 
   return (
     <div className='space-y-3'> 
-        <p><span className='font-semibold'>Answer:</span>{decimalToBinary()}</p>
+        <p><span className='font-semibold'>Answer: </span>{decimalToBinary()}</p>
         <h2  className='font-semibold'>Solution:  </h2>
         <div className='px-2'>
             {solutionBinary()}

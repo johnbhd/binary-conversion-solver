@@ -5,6 +5,7 @@ import formSubmit from "./hooks/formSubmit"
 function App() {
   const {
     submit,
+    baseOptions,
     handleChange,
     handleSubmit,
     form
@@ -14,6 +15,7 @@ function App() {
     <MainLayout submit = {submit}>
       <Home 
         submit = {submit}
+        baseOptions = {baseOptions}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         form={form}
