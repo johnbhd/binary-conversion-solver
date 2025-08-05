@@ -1,19 +1,22 @@
-function decimalToBinary(num) {
-    let localNum = num 
-    let binary = '', base = 2
-      
-    while(localNum > 0) {
-      binary = (localNum % base) + binary
+export function decimalToBinary(decimal) {
+    let localNum = decimal, binary = '', base = 2
+    let steps = []
+
+    while (localNum > 0) {
+      let currentNum = localNum
+      let remainder = currentNum % base
+      binary = remainder + binary
+
+      steps.push({
+        currentNum,
+        remainder,
+        binarySoFar: binary
+      })
+
       localNum = Math.floor(localNum / base)
     }
-    //binary = localNum.toString(2)
 
-    return binary 
-}
-
-function binaryToDecimal(binary) {
-    return binary * 2
+    return {base, binary, steps}
 }
 
 
-console.log(decimalToBinary(101))
