@@ -25,7 +25,8 @@
 - [x] Form Manipulation
 - [x] Decimal to Binary
 - [x] Select option Manipulation
-- [ ] Utils conversion
+- [x] Utils conversion
+- [ ] Binary to Decimal
 
 
 

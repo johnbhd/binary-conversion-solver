@@ -13,7 +13,7 @@ function ShowAnswer({ submit }) {
     while(localNum > 0) {
       binary = (localNum % base) + binary
       localNum = Math.floor(localNum / base)
-    }
+  }
     //binary = localNum.toString(2)
 
     return binary 
