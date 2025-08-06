@@ -49,7 +49,8 @@ function Home({submit, baseOptions, handleChange, handleSubmit, form}) {
                         value={form.number}
                         onChange={handleChange}
                         placeholder="Enter Number" 
-                        className="px-2 border outline-0 py-1 border-gray-200 w-full" 
+                        className="px-2 border outline-0 py-1 border-gray-200 w-full text-gray-100"  
+                        required
                     />
                 </div>
                 <button className="bg-blue-200 p-1 rounded-lg cursor-pointer" type="submit">Calculate</button>

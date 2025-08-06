@@ -26,6 +26,7 @@
 - [x] Decimal to Binary
 - [x] Select option Manipulation
 - [x] Utils conversion
+- [x] Conversion function Mapping
 - [ ] Binary to Decimal
 
 

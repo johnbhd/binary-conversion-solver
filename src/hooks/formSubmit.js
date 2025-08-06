@@ -27,7 +27,6 @@ export default function formSubmit() {
 
     }
 
-
   return {
     submit,
     baseOptions,
