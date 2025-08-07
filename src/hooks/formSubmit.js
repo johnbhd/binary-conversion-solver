@@ -5,8 +5,8 @@ export default function formSubmit() {
     
     const [form, setForm] = useState({ 
       number: "",
-      fromBase: baseOptions[0],
-      toBase: baseOptions[1]
+      fromBase: baseOptions[1],
+      toBase: baseOptions[0]
     })
     
     const [submit, setSubmit] = useState({

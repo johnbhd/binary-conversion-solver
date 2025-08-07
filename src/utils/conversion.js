@@ -19,25 +19,34 @@ export function decimalToBinary(decimal) {
     return {base, binary, steps}
 }
 
-export function decimalToOctal(decimal) {
-    let localNum = decimal, binary = '', base = 2
-    let steps = []
+export function binaryToDecimal(binary) {
+    let decimal = 0, steps = [], length = binary.length
+    let equation = []
+    for (let i = 0; i < length; i++) {
+      let bit = Number(binary[i]) 
+      let power = length - 1 - i
 
-    while (localNum > 0) {
-      let currentNum = localNum
-      let remainder = currentNum % base
-      binary = remainder + binary
+      let value = bit * (2 ** power)
+      decimal += value
+
 
       steps.push({
-        currentNum,
-        remainder,
-        binarySoFar: binary
+        bit,
+        power,
+        value,
+        decimalSofar: decimal
       })
+      
+      equation.push(value)
 
-      localNum = Math.floor(localNum / base)
     }
+   
 
-    return {base, binary, steps}
+    return { 
+      decimal, 
+      steps, 
+      equation: equation.join(" + ") 
+    }
 }
 
 

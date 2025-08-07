@@ -2,10 +2,10 @@
 - A binary conversion that compute problems with solution
 
 ## Conversion
-- Decimal
-- Binary
-- Octal
-- Hexadecimal
+- Decimal (base 10)
+- Binary (base 2)
+- Octal (base 8)
+- Hexadecimal (base 16)
 
 
 ## Tech Stack
@@ -27,8 +27,13 @@
 - [x] Select option Manipulation
 - [x] Utils conversion
 - [x] Conversion function Mapping
-- [ ] Binary to Decimal
-
+- [ ] Fix selection
+#
+- [x] Decimal to Binary
+- [x] Binary to Decimal
+#
+- [ ] Binary to Octal
+- [ ] Octal to Binary
 
 
 

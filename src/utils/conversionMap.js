@@ -1,12 +1,12 @@
 import { decimalToBinary } from "./conversion"
-import { decimalToOctal } from "./conversion"
+import { binaryToDecimal } from "./conversion"
 
 export const conversionMap = {
   "decimal->binary": decimalToBinary,
-  "decimal->octal": decimalToOctal,
+  "decimal->octal": 'decimalToOctal',
   "decimal->hexadecimal": 'decimalToHexadecimal',
 
-  "binary->decimal": 'binaryToDecimal',
+  "binary->decimal": binaryToDecimal,
   "binary->octal": 'binaryToOctal',
   "binary->hexadecimal": 'binaryToHexadecimal',
 
