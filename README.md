@@ -27,12 +27,12 @@
 - [x] Select option Manipulation
 - [x] Utils conversion
 - [x] Conversion function Mapping
-- [ ] Fix selection
+- [x] Linked selects – two dropdowns that update each other to stay different.
 #
 - [x] Decimal to Binary
 - [x] Binary to Decimal
 #
-- [ ] Binary to Octal
+- [x] Binary to Octal
 - [ ] Octal to Binary
 
 

@@ -5,8 +5,8 @@ export default function formSubmit() {
     
     const [form, setForm] = useState({ 
       number: "",
-      fromBase: baseOptions[1],
-      toBase: baseOptions[0]
+      fromBase: baseOptions[2],
+      toBase: baseOptions[1]
     })
     
     const [submit, setSubmit] = useState({
@@ -15,10 +15,18 @@ export default function formSubmit() {
     
     const handleChange = (e) => { 
       const { name, value } = e.target
-        setForm(prev => ({
-          ...prev,
-          [name] : value
-        }))
+
+        setForm((prev) => {
+          if (name === "fromBase" && value === prev.toBase) {
+            const newToBase = baseOptions.find(val => val !== value)
+            return {...prev, fromBase: value, toBase: newToBase}
+          }
+          if (name === "toBase" && value === prev.fromBase) {
+            const newFromBase = baseOptions.find(val => val !== value)
+            return {...prev, toBase: value, fromBase: newFromBase}
+          }
+          return {...prev, [name] : value}
+        })
     }
 
     const handleSubmit = (e) => {

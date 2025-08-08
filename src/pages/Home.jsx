@@ -1,4 +1,4 @@
-import ShowAnswer from "../components/showAnswer"
+import AnswerConversion from "../components/AnswerConversion"
 
 function Home({submit, baseOptions, handleChange, handleSubmit, form}) {
 
@@ -11,12 +11,10 @@ function Home({submit, baseOptions, handleChange, handleSubmit, form}) {
                 <select
                     onChange={handleChange}
                     name="fromBase"
-                    value={form.formBase} 
+                    value={form.fromBase} 
                     className="bg-gray-100 p-2 cursor-pointer outline-0"
                 >
-                    {baseOptions
-                    .filter(option => option !== form.toBase)
-                    .map(option => (
+                    {baseOptions.map(option => (
                         <option key={option} value={option}>
                             {option.charAt(0).toUpperCase() + option.slice(1)}
                         </option>
@@ -31,9 +29,7 @@ function Home({submit, baseOptions, handleChange, handleSubmit, form}) {
                     value={form.toBase} 
                     className="bg-gray-100 p-2 cursor-pointer outline-0"
                 >
-                    {baseOptions
-                    .filter(option => option !== form.fromBase)
-                    .map(option => (
+                    {baseOptions.map(option => (
                         <option key={option} value={option}>
                             {option.charAt(0).toUpperCase() + option.slice(1)}
                         </option>
@@ -56,7 +52,7 @@ function Home({submit, baseOptions, handleChange, handleSubmit, form}) {
                 <button className="bg-blue-200 p-1 rounded-lg cursor-pointer" type="submit">Calculate</button>
             </div>
         </form>
-        <ShowAnswer submit = {submit}/>
+        <AnswerConversion submit = {submit}/>
     </div>
   )
 }

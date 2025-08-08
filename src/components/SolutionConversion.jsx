@@ -1,11 +1,8 @@
   import { useEffect, useState } from "react"
-  import { decimalToBinary } from "../utils/conversion.js"
   import { useConversion } from "../hooks/useConversion.js"
 
   function SolutionConversion({fromBase, toBase, number, resultComputed }) {
     const [result, setResult] = useState('')
-
-
     
     useEffect(() => {
       if (fromBase && toBase && number !== "") {
@@ -24,15 +21,13 @@
         resultComputed(result[toBase])
       }
     }, [result, toBase, resultComputed])
-
-
-    
+ 
     console.log(`Result: ${result[toBase]}`)
     return (
       <div>
         {result?.steps?.length > 0 &&
         result?.steps?.map((step, index) => (
-          <p key={index} className='text-justify tracking-wide'>
+          <div key={index} className='text-justify tracking-wide'>
               {/* Decimal → Binary */}
               {fromBase === 'decimal' && toBase === 'binary' && (
                 <>
@@ -52,11 +47,45 @@
 
                       )}
 
-                  
                   </>
                 )}
+              {/* Binary → Octal */}
+                {fromBase === 'binary' && toBase === 'octal' && (
+                  <>
+                    <table className="border border-white text-center">
+                      <tbody>
+                        <tr>
+                          {step.chunks?.map((c, index) => (
+                            <td key={index} className="p-3 border border-white">{c}</td>
+                          ))}
+                        </tr>
+                        <tr>
+                            {step.decimalValue?.map((c, index) => (
+                              <td key={index} className="p-3 border border-white">{c}</td>
+                            ))}
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div className="mt-5 space-y-2">
+                        <p>Group the binary number into sets of 3 bits from left to right.</p>
+                        <p>Convert each group into its decimal value — this becomes the octal digit.</p>
+                        <p>  
+                          {step.chunks?.map((c, index) => (
+                            <span key={index}> {c}</span>
+                          ))} → {step.decimalValue?.map((c, index) => (
+                            <span key={index}> {c}</span>
+                          ))} → Octal
 
-          </p>
+                          {index === result.steps.length - 1 && (
+                              <span className='font-semibold '> {result.equation} = {result[toBase]}</span>
+                          )}
+                        </p>
+                    </div>
+
+                  </>
+                )}
+                
+          </div>
         ))} 
       </div>
     )
