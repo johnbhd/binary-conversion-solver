@@ -40,7 +40,7 @@ function Home({submit, baseOptions, handleChange, handleSubmit, form}) {
             <div className="flex flex-col gap-y-4">
                 <div className="flex gap-4">
                     <input 
-                        type="number" 
+                        type={form.fromBase === "hexadecimal" ? "text" : "number"} 
                         name="number"
                         value={form.number}
                         onChange={handleChange}
